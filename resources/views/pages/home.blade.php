@@ -384,7 +384,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col section-6 section-description wow fadeIn">
-                        <h2><strong>CONTACT US</strong></h2>
+                        <h2 style="color: white;"><strong>CONTACT US</strong></h2>
                         <div class="divider-1 wow fadeInUp"><span></span></div>
                         {{-- <p>Send us an email using the form below or follow us on our social media channels.</p> --}}
                     </div>
@@ -409,14 +409,14 @@
                                 <button type="submit" class="btn btn-primary btn-customized"><i class="fas fa-paper-plane"></i> Send Message</button>
                             </form>
                         </div> --}}
-                        <h4>Address</h4>
+                        <h4 style="color: white;">Address</h4>
                         <h6> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quibusdam nemo ad id quis vitae sit repellat dolorem! Ea perferendis quam ipsam id quaerat nemo? Dolores, assumenda possimus. Neque, veniam?</h6> <br>
 
-                        <h4>No. Telepon :</h4>
+                        <h4 style="color: white;">No. Telepon :</h4>
                         <h6>021-299-8999</h6>
                     </div>
                     <div class="col-md-5 offset-md-1 section-6-box wow fadeInDown">
-                        <h3>Follow us</h3>
+                        <h3 style="color: white;">Follow us</h3>
                         <div class="section-6-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             {{-- <a href="#"><i class="fab fa-dribbble"></i></a> --}}

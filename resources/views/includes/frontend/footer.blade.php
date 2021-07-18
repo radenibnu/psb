@@ -1,5 +1,5 @@
  <!-- Footer -->
- <footer class="footer-container" style="background-color: rgba(255, 68, 0, 0.96); color: white;">
+ <footer class="footer-container" style="background-color: #f35b3f; color: white;">
 		
     <div class="container">
         <div class="row">

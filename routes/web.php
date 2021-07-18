@@ -21,3 +21,9 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
+
+Route::prefix('admin')->group(function () {
+
+    Route::get('/dashboard', 'dashboardController@index')->name('dashboard.index');
+    
+});

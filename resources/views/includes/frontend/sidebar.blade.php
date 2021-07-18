@@ -7,26 +7,41 @@
     </div>
     
     <div class="logo">
-        <h3><a href="index.html">Bootstrap 4 Template with Sidebar Menu</a></h3>
+        {{-- <h3><a href="index.html">Bootstrap 4 Template with Sidebar Menu</a></h3> --}}
+        <h3><b>TPQ UNTITLE</b></h3>
     </div>
     
     <ul class="list-unstyled menu-elements">
         <li class="active">
             <a class="scroll-link" href="#top-content"><i class="fas fa-home"></i> Home</a>
         </li>
+
+        <li>
+            <a class="scroll-link" href="#section-1"><i class="fas fa-user"></i> Profil</a>
+        </li>
+
+        <li>
+            <a class="scroll-link" href="#fasilitas"><i class="fas fa-building"></i> Fasilitas</a>
+        </li>
+
+        <li>
+            <a class="scroll-link" href="#prestasi"><i class="fas fa-trophy"></i> Prestasi</a>
+        </li>
+
+        <li>
+            <a class="scroll-link" href="#contact-us"><i class="fas fa-envelope"></i> Contact us</a>
+        </li>
+
+        {{-- <li>
+            <a class="scroll-link" href="#section-5"><i class="fas fa-pencil-alt"></i> Portfolio</a>
+        </li> --}}
+         {{-- 
         <li>
             <a class="scroll-link" href="#section-1"><i class="fas fa-cog"></i> What we do</a>
-        </li>
-        <li>
-            <a class="scroll-link" href="#section-2"><i class="fas fa-user"></i> About us</a>
-        </li>
-        <li>
-            <a class="scroll-link" href="#section-5"><i class="fas fa-pencil-alt"></i> Portfolio</a>
-        </li>
-        <li>
-            <a class="scroll-link" href="#section-6"><i class="fas fa-envelope"></i> Contact us</a>
-        </li>
-        <li>
+        </li> 
+        --}}
+
+        {{-- <li>
             <a href="#otherSections" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" role="button" aria-controls="otherSections">
                 <i class="fas fa-sync"></i>Other sections
             </a>
@@ -38,8 +53,10 @@
                     <a class="scroll-link" href="#section-4">We think that...</a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
     </ul>
+
+    <button class="btn btn-primary btn-sm ml-4 "> Login </button>
     
     <div class="to-top">
         <a class="btn btn-primary btn-customized-3" href="#" role="button">

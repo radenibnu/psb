@@ -12,6 +12,18 @@
         @stack('before-css')
         @include('includes.frontend.style')
         @stack('after-css')
+
+        <style>
+            .carousel-item {
+                height: 100vh;
+                min-height: 350px;
+                background: no-repeat center center scroll;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                }
+        </style>
     
 
     </head>
@@ -31,10 +43,10 @@
 			
                 @yield('content')
 		       
+                @include('includes.frontend.footer')
 	        </div>
 	        <!-- End content -->
             
-            @include('includes.frontend.footer')
         </div>
         <!-- End wrapper -->
 

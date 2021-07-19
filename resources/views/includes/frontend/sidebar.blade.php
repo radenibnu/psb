@@ -56,7 +56,7 @@
         </li> --}}
     </ul>
 
-    <button class="btn btn-primary btn-sm ml-4 "> Login </button>
+    <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 ">Login</a>
     
     <div class="to-top">
         <a class="btn btn-primary btn-customized-3" href="#" role="button">

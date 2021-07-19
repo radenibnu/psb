@@ -64,8 +64,8 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                    <img class="img-profile rounded-circle"
-                        src="{{ asset('backend/img/undraw_profile_1.svg') }}">
+                    {{-- <img class="img-profile rounded-circle"
+                        src="{{ asset('backend/img/undraw_profile_1.svg') }}"> --}}
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

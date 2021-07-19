@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hayyu Shopping</title>
+    <title>TPQ</title>
 
     @stack('before-css')
     @include('includes.backend.style')

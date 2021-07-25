@@ -37,6 +37,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/show/{id}', 'formController@show')->name('form.show');
     });
 
+    Route::prefix('manageAccount')->group(function () {
+        Route::get('/', 'manageAccountController@index')->name('manageAccount.index');
+        Route::get('/create', 'manageAccountController@create')->name('manageAccount.create');
+        Route::post('/', 'manageAccountController@store')->name('manageAccount.store');
+        Route::get('/edit/{id}', 'manageAccountController@edit')->name('manageAccount.edit');
+        Route::put('/{id}', 'manageAccountController@update')->name('manageAccount.update');
+        Route::put('/delete', 'manageAccountController@delete')->name('manageAccount.delete');
+        Route::delete('/{id}', 'manageAccountController@destroy')->name('manageAccount.destroy');
+        Route::get('/show/{id}', 'manageAccountController@show')->name('manageAccount.show');
+    });
+
     Route::prefix('profile')->group(function () {
         Route::get('/', 'profileController@index')->name('profile.index');
         Route::put('/{id}', 'profileController@update')->name('profile.update');

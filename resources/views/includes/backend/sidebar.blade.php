@@ -50,6 +50,12 @@
             <span>Profile</span></a>
     </li>
 
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('manageAccount.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Manage Account</span></a>
+    </li>
+
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

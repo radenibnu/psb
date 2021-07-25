@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
 use Illuminate\Http\Request;
 
 class formController extends Controller
@@ -13,7 +14,10 @@ class formController extends Controller
      */
     public function index()
     {
-        return view('pages.backend.form.index');
+        $forms = Form::all();
+        return view('pages.backend.form.index')->with([
+            'forms' => $forms
+        ]);
     }
 
     /**
@@ -34,7 +38,14 @@ class formController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $forms = $request->all();
+        $forms['image'] = 'storage/' . $request->file('image')->store(
+            'assets/form',
+            'public'
+        );
+
+        Form::create($forms);
+        return redirect()->route('form.index');
     }
 
     /**
@@ -45,7 +56,10 @@ class formController extends Controller
      */
     public function show($id)
     {
-        //
+        $forms = Form::findOrFail($id);
+        return view('pages.backend.form.show')->with([
+            'forms' => $forms
+        ]);
     }
 
     /**
@@ -56,7 +70,10 @@ class formController extends Controller
      */
     public function edit($id)
     {
-        //
+        $forms = Form::findOrFail($id);
+        return view('pages.backend.form.edit')->with([
+            'forms' => $forms
+        ]);
     }
 
     /**
@@ -68,7 +85,17 @@ class formController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newform = $request->all();
+        if ($request->file('image') != '') {
+            $newform['image'] = 'storage/' . $request->file('image')->store(
+                'assets/form',
+                'public'
+            );
+        }
+
+        $form = Form::findOrFail($id);
+        $form->update($newform);
+        return redirect()->route('form.index');
     }
 
     /**
@@ -79,6 +106,8 @@ class formController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $forms = Form::findOrFail($id);
+        $forms->delete();
+        return redirect()->route('form.index');
     }
 }

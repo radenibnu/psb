@@ -13,32 +13,26 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                    <label for="product_name">Product Name</label>
-                    <input type="text" class="form-control" name="product_name" id="product_name">
+                    <label for="nama">Nama Siswa</label>
+                    <input type="text" class="form-control" name="nama" id="nama">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="text" class="form-control" name="price" id="price">
+                    <label for="kelas">Kelas</label>
+                    <input type="text" class="form-control" name="kelas" id="kelas">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                    <label for="stock">Stock</label>
-                    <input type="text" class="form-control" name="stock" id="stock">
+                    <label for="nama_rekening">Nama Rekening</label>
+                    <input type="text" class="form-control" name="nama_rekening" id="nama_rekening">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                    <label for="color">Color</label>
-                    <input type="text" class="form-control" name="color" id="color">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" name="description" id="description">
+                    <label for="nomor_rekening">Nomor Rekening</label>
+                    <input type="text" class="form-control" name="nomor_rekening" id="nomor_rekening">
                     </div>
                 </div>
 
@@ -52,7 +46,7 @@
 
                 <div class="card-footer">
                     <div class="d-grid">
-                        <button class="btn btn-success" type="submit">Submit</button>
+                        <button class="btn btn-success" type="submit">Add</button>
                         <a href="{{ route('form.index')}}" class="btn btn-warning" type="cancel">Cancel</a>
                     </div>
                 </div>

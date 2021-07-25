@@ -2,7 +2,7 @@
 
 @section('content')    
 
-    <h1 class="h3 mb-2 text-gray-800">Forms</h1>
+    <h1 class="h3 mb-2 text-gray-800">Form SPP</h1>
 
      <!-- DataTales Example -->
      <div class="card shadow mb-4">
@@ -22,26 +22,19 @@
                              <th>No</th>
                              <th>Nama Siswa</th>
                              <th>Kelas</th>
-                             <th>Jumlah Pembayaran</th>
-                             <th>Nama Rekening</th>
-                             <th>Nomor Rekening</th>
                              <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
-                        {{-- @forelse ($products as $product)
+                        @forelse ($forms as $form)
                         <tr>
                             <td>  {{ $loop->iteration}}</td>
-                            <td> {{$product->product_name}}</td>
-                            <td> {{$product->price}}</td>
-                            <td> <img src="{{ asset($product->image) }}" alt="" width="50"></td>
-                            <td> {{ $product->stock }}</td>
-                            <td> {{$product->color}}</td>
-                            <td> {{$product->description}}</td>
+                            <td> {{$form->nama}}</td>
+                            <td> {{$form->kelas}}</td>
                             <td>
-                                <form action="{{ route('product.destroy', $product->id) }}" method="POST">
-                                    <a href="{{ route('product.show', $product->id) }}" type="" class=""><input type="button" class="btn btn-success btn-sm" value="View"></a>
-                                    <a href="{{route('product.edit', $product->id) }}" type="" class=""><input type="button" class="btn btn-warning btn-sm" value="Edit"></a>
+                                <form action="{{ route('form.destroy', $form->id) }}" method="POST">
+                                    <a href="{{ route('form.show', $form->id) }}" type="" class=""><input type="button" class="btn btn-success btn-sm" value="View"></a>
+                                    <a href="{{route('form.edit', $form->id) }}" type="" class=""><input type="button" class="btn btn-warning btn-sm" value="Edit"></a>
 
                                         @csrf
                                         @method('DELETE')
@@ -53,7 +46,7 @@
                         </tr>
                         @empty
 
-                        @endforelse --}}
+                        @endforelse
                      </tbody>
                  </table>
              </div>

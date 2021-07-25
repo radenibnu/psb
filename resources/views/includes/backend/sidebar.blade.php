@@ -31,7 +31,7 @@
 
      <!-- Nav Item - Agent-->
      <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('form.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Form SPP</span></a>
     </li>

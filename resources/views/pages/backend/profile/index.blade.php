@@ -4,38 +4,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="card">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{asset($user->image)}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5><i class="fa fa-user mb-3"></i> My Profile</h5>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Nama</td>
-                                <td width="10">:</td>
-                                <td>{{ $user->name }}</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>{{ $user->email }}</td>
-                            </tr>
-                            {{-- <tr>
-                                <td>No HP</td>
-                                <td>:</td>
-                                <td>{{ $user->nohp }}</td>
-                            </tr>
-                            <tr>
-                                <td>Alamat</td>
-                                <td>:</td>
-                                <td>{{ $user->alamat }}</td>
-                            </tr> --}}
-                        </tbody>
-                    </table>
+                    <h5 class="card-title">Username : {{$user->name}}</h5>
+                    <p class="card-text">Email : {{$user->email}}</p>
                 </div>
-            </div>
+              </div>
         </div>
-        <div class="col-md-12 mt-2">
+
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
                     <h5><i class="fa fa-pencil-alt mb-3"></i> Edit Profile</h5>
@@ -70,6 +49,17 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="image" class="col-md-2 col-form-label text-md-right">{{ __('Image') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" name="image" class="form-control-file" id="image">
+                                </div>
+                            </div>
+                        </div>
+
 
                         {{-- <div class="form-group row">
                             <label for="nohp" class="col-md-2 col-form-label text-md-right">No. HP</label>
@@ -132,7 +122,7 @@
                 </div>
             </div>
         </div>
-        
+       
     </div>
 </div>
     

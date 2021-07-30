@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use Illuminate\Http\Request;
+// use Barryvdh\DomPDF\PDF as PDF;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class formController extends Controller
 {
@@ -62,6 +65,15 @@ class formController extends Controller
         ]);
     }
 
+    public function cetakPDF($id, Form $form)
+    {
+        $form = Form::findOrFail($id);
+        $pdf = PDF::loadview('pages.backend.form.cetak_pdf', [
+            'form' => $form
+        ]);
+        return $pdf->download('form.pdf');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -111,3 +123,5 @@ class formController extends Controller
         return redirect()->route('form.index');
     }
 }
+
+

@@ -23,7 +23,7 @@
                      </thead>
                      <tbody>
                         <tr>
-                            <td>  {{ $forms->id}}</td>
+                            <td> {{ $forms->id}}</td>
                             <td> {{$forms->nama}}</td>
                             <td> {{$forms->kelas}}</td>
                             <td> {{ $forms->nama_rekening }}</td>
@@ -33,7 +33,7 @@
                      </tbody>
                  </table>
              </div>
-             <a href="#">
+             <a target="_blank" href="{{route('form.cetak', $forms->id)}}" >
                 <button class="btn btn-primary">Print</button>
             </a>
          </div>

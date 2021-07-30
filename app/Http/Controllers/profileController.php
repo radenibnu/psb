@@ -82,13 +82,19 @@ class profileController extends Controller
         $user = User::where('id', Auth::user()->id)->first();
         $user->name = $request->name;
         $user->email = $request->email;
-        // $user->nohp = $request->nohp;
-        // $user->alamat = $request->alamat;
+        if ($request->file('image') != '') {
+            $user['image'] = 'storage/' . $request->file('image')->store(
+                'assets/profile',
+                'public'
+            );
+        }
         if (!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
 
         $user->update();
+
+
 
         // alert()->success('User Sukses diupdate', 'Success');
         return redirect()->route('profile.index');

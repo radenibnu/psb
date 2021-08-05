@@ -70,7 +70,7 @@ class formController extends Controller
     {
         $forms = Form::all();
 
-        // view()->share('data', $form);
+        view()->share('data', $forms);
         $pdf = PDF::loadview('pages.backend.form.cetak_pdf', [
             'form' => $forms
         ]);

@@ -1,6 +1,4 @@
-@extends('layouts.admin')
 
-@section('content')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h5>Detail Forms</h5>
@@ -35,4 +33,3 @@
         </div>
     </div>
 </div>
-@endsection

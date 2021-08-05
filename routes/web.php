@@ -36,7 +36,8 @@ Route::prefix('admin')->group(function () {
         Route::delete('/{id}', 'formController@destroy')->name('form.destroy');
         Route::get('/show/{id}', 'formController@show')->name('form.show');
 
-        Route::get('/cetak_pdf/{id}', 'formController@cetakPDF')->name('form.cetak');
+        // Route::get('/cetak_pdf/{id}', 'formController@cetakPDF')->name('form.cetak');
+        Route::get('/cetak_pdf', 'formController@cetakPDF')->name('form.cetak');
     });
 
     Route::prefix('manageAccount')->group(function () {

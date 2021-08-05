@@ -13,6 +13,9 @@
                 </span>
                 <span class="text">Add Data SPP</span>
             </a>
+            <a href="{{ route('form.cetak') }}" class="btn btn-primary btn-icon-split">
+                <span class="text">export PDF</span>
+            </a>
          </div>
          <div class="card-body">
              <div class="table-responsive">
@@ -45,7 +48,9 @@
                             </td>
                         </tr>
                         @empty
-
+                        <div class="alert alert-danger">
+                            <strong> Oopps ! </strong> Data kosong
+                          </div>
                         @endforelse
                      </tbody>
                  </table>

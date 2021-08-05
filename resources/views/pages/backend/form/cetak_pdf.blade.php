@@ -19,14 +19,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                   <tr>
-                       <td> {{ $form->id}}</td>
-                       <td> {{$form->nama}}</td>
-                       <td> {{$form->kelas}}</td>
-                       <td> {{ $form->nama_rekening }}</td>
-                       <td> {{$form->nomor_rekening}}</td>
-                       <td> <img src="{{ asset($form->image) }}" alt="" width="50"></td>
-                   </tr>
+                    {{-- @forelse ($forms as $form )
+                        <tr>
+                            <td> {{ $form->id}}</td>
+                            <td> {{$form->nama}}</td>
+                            <td> {{$form->kelas}}</td>
+                            <td> {{ $form->nama_rekening }}</td>
+                            <td> {{$form->nomor_rekening}}</td> --}}
+                            {{-- <td> <img src="{{ asset($form->image) }}" alt="" width="50"></td> --}}       
+                        </tr>
+                    {{-- @empty
+                    @endforelse --}}
                 </tbody>
             </table>
         </div>

@@ -14,6 +14,7 @@
     @stack('before-css')
     @include('includes.backend.style')
     @stack('after-css')
+    @toastr_css
 
 </head>
 
@@ -79,5 +80,8 @@
     @include('includes.backend.script')
 
 </body>
+@jquery
+@toastr_js
+@toastr_render
 
 </html>

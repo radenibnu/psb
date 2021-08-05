@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use Illuminate\Http\Request;
-// use Barryvdh\DomPDF\PDF as PDF;
 use Barryvdh\DomPDF\Facade as PDF;
+// use Yoeunes\Toastr\Facade as toastr;
 
 
 class formController extends Controller
@@ -48,6 +48,7 @@ class formController extends Controller
         );
 
         Form::create($forms);
+        // toastr()->success('Success Message');
         return redirect()->route('form.index');
     }
 
@@ -65,11 +66,13 @@ class formController extends Controller
         ]);
     }
 
-    public function cetakPDF($id, Form $form)
+    public function cetakPDF()
     {
-        $form = Form::findOrFail($id);
+        $forms = Form::all();
+
+        // view()->share('data', $form);
         $pdf = PDF::loadview('pages.backend.form.cetak_pdf', [
-            'form' => $form
+            'form' => $forms
         ]);
         return $pdf->download('form.pdf');
     }
@@ -120,7 +123,7 @@ class formController extends Controller
     {
         $forms = Form::findOrFail($id);
         $forms->delete();
-        return redirect()->route('form.index');
+        return redirect()->route('form.index')->with('success', "Data Berhasil Dihapus");
     }
 }
 

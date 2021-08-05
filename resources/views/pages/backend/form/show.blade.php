@@ -33,9 +33,13 @@
                      </tbody>
                  </table>
              </div>
-             <a target="_blank" href="{{route('form.cetak', $forms->id)}}" >
+             <a href="{{route('form.index')}}" >
+                 <button class="btn btn-primary">Back</button>
+             </a>
+            <a target="_blank" href="{{route('form.cetak', $forms->id)}}" >
                 <button class="btn btn-primary">Print</button>
             </a>
+            
          </div>
      </div>
 @endsection

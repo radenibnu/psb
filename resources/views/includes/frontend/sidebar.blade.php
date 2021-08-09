@@ -57,6 +57,8 @@
     </ul>
 
     <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 ">Login</a>
+    <a href="{{ route ('pembayaranSPP')}}" class="btn btn-sm btn-primary ml-4 ">Pembayaran SPP</a>
+    <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 ">Login</a>
     
     <div class="to-top">
         <a class="btn btn-primary btn-customized-3" href="#" role="button">

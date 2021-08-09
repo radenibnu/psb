@@ -22,6 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
+Route::prefix('user')->group(function (){
+    Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP.index');
+
+});
+
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'dashboardController@index')->name('dashboard.index');

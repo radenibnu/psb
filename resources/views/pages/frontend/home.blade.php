@@ -70,7 +70,7 @@
                     <span class="sr-only">Next</span>
                   </a>
             </div>
-          </header>
+        </header>
 
         <!-- Section 1 -->
         <div class="section-1-container section-container" id="section-1">

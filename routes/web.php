@@ -22,10 +22,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
-Route::prefix('user')->group(function (){
-    Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP.index');
-
-});
+Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP');
+Route::get('/', 'pembayaranSPPController@store')->name('pembayaranSPP.store');
 
 Route::prefix('admin')->group(function () {
 

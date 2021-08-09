@@ -56,9 +56,9 @@
         </li> --}}
     </ul>
 
-    <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 ">Login</a>
-    <a href="{{ route ('pembayaranSPP')}}" class="btn btn-sm btn-primary ml-4 ">Pembayaran SPP</a>
-    <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 ">Login</a>
+    <a href="{{ route ('login')}}" class="btn btn-sm btn-primary ml-4 mb-1">Login</a> <br>
+    <a href="{{ route ('pembayaranSPP')}}" class="btn btn-sm btn-primary ml-4 mb-1 ">Pembayaran SPP</a><br>
+    <a href="{{ route ('form.index')}}" class="btn btn-sm btn-primary ml-4 ">Upload Bukti Transer</a>
     
     <div class="to-top">
         <a class="btn btn-primary btn-customized-3" href="#" role="button">

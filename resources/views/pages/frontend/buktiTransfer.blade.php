@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>Form Pembayaran SPP</title>
+    <title>Form Upload Bukti Transfer</title>
   </head>
   <body>
       <!-- Just an image -->
@@ -22,19 +22,15 @@
     <div class="container">
         <div class="card text-left">
             <div class="card-header">
-              Form Pembayaran SPP
+              Form Upload Bukti Transfer
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('pembayaranSPPStore') }}" >
+                <form method="POST" action="{{ route('form.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
-                      <label for="namalengkap">Nama Lengkap</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
-                    </div>
 
                     <div class="form-group">
-                      <label for="nis">NIS </label>
-                      <input type="text" class="form-control" id="nis" name="nis" placeholder="Nomor Induk Sekolah">
+                      <label for="namalengkap">Nama Santi</label>
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Santri">
                     </div>
 
                     <div class="form-group">
@@ -43,36 +39,24 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="kategoribayar">Kategori Bayar</label>
-                      <select class="form-control" id="kategoribayar" name="kategoribayar">
-                        <option >50000</option>
-                        <option >40000</option>
-                        <option >35000</option>
-                      </select>
+                      <label for="nama_rekening">Nama Rekening </label>
+                      <input type="text" class="form-control" id="nama_rekening" name="nama_rekening" placeholder="Nama Rekening">
                     </div>
 
                     <div class="form-group">
-                      <label for="bulan">Pembayaran SPP Bulan</label>
-                      <select class="form-control" id="bulan" name="bulan">
-                        <option value="januari">Januari</option>
-                        <option value="februari">Februari</option>
-                        <option value="maret">Maret</option>
-                        <option value="april">April</option>
-                        <option value="mei">Mei</option>
-                        <option value="juni">Juni</option>
-                        <option value="juli">Juli</option>
-                        <option value="agustus">Agustus</option>
-                        <option value="september">September</option>
-                        <option value="oktober">Oktober</option>
-                        <option value="november">November</option>
-                        <option value="desember">Desember</option>
-                      </select>
+                      <label for="nomor_rekening">Nomor Rekening </label>
+                      <input type="text" class="form-control" id="nomor_rekening" name="nomor_rekening" placeholder="Nama Rekening">
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Bayar</button>
+                    <div class="form-group">
+                      <label for="nomor_rekening">Upload Image Bukti Tranfer </label>
+                      <input type="file" name="image" class="form-control-file" id="image" >
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Submit</button>
                   </form>
             </div>
-          </div>
+        </div>
         <a href="{{ route('frontend') }}" class="btn btn-sm btn-success mt-3 mb-3">Back to Home</a>
     </div>
 

@@ -18,6 +18,7 @@ class formController extends Controller
     public function index()
     {
         $forms = Form::all();
+
         return view('pages.backend.form.index')->with([
             'forms' => $forms
         ]);
@@ -30,7 +31,7 @@ class formController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.form.create');
+        return view('pages.frontend.buktiTransfer');
     }
 
     /**
@@ -49,7 +50,11 @@ class formController extends Controller
 
         Form::create($forms);
         // toastr()->success('Success Message');
-        return redirect()->route('form.index');
+        return redirect()->route('notifikasiUpload');
+    }
+
+    public function notifikasiUpload(){
+        return view('pages.frontend.notifikasiUpload');
     }
 
     /**

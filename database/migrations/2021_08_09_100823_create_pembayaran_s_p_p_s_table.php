@@ -15,11 +15,11 @@ class CreatePembayaranSPPSTable extends Migration
     {
         Schema::create('pembayaran_s_p_p_s', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nis');
-            $table->string('kelas');
-            $table->integer('kategoribayar');
-            $table->string('bulan');
+            $table->string('nama')->nullable();
+            $table->string('nis')->nullable();
+            $table->string('kelas')->nullable();
+            $table->integer('kategoribayar')->nullable();
+            $table->string('bulan')->nullable();
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

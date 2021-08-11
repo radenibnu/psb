@@ -23,8 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
 Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP');
-Route::post('/', 'pembayaranSPPController@store')->name('pembayaranSPP.store');
+Route::post('/pembayaranSPPStore', 'pembayaranSPPController@store')->name('pembayaranSPPStore');
 Route::get('/notifikasi', 'pembayaranSPPController@notifikasi')->name('pembayaranSPP.notifikasi');
+
+Route::get('/uploadBuktiTransfer', 'formController@create')->name('form.create');
+Route::post('/uploadStore', 'formController@store')->name('form.store');
+Route::get('/notifikasiUpload', 'formController@notifikasiUpload')->name('notifikasiUpload');
+
+
 
 Route::prefix('admin')->group(function () {
 
@@ -32,8 +38,8 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('form')->group(function () {
         Route::get('/', 'formController@index')->name('form.index');
-        Route::get('/create', 'formController@create')->name('form.create');
-        Route::post('/', 'formController@store')->name('form.store');
+        // Route::get('/create', 'formController@create')->name('form.create');
+        // Route::post('/', 'formController@store')->name('form.store');
         Route::get('/edit/{id}', 'formController@edit')->name('form.edit');
         Route::put('/{id}', 'formController@update')->name('form.update');
         Route::put('/delete', 'formController@delete')->name('form.delete');

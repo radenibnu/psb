@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PembayaranSPP;
 use Illuminate\Http\Request;
 
 class pembayaranSPPController extends Controller
@@ -34,7 +35,19 @@ class pembayaranSPPController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $spps = $request->all();
+
+        PembayaranSPP::create($spps);
+        return redirect()->route('pembayaranSPP.notifikasi');   
+    }
+
+    public function notifikasi(){
+
+        $spps = PembayaranSPP::all();
+
+        return view('pages.frontend.notifikasi')->with([
+            'spps' => $spps
+        ]);
     }
 
     /**

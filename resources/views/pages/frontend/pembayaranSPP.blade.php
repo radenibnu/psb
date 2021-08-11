@@ -29,7 +29,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="namalengkap">Nama Lengkap</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="NAma Lengkap">
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
                     </div>
 
                     <div class="form-group">
@@ -45,9 +45,9 @@
                     <div class="form-group">
                       <label for="kategoribayar">Kategori Bayar</label>
                       <select class="form-control" id="kategoribayar" name="kategoribayar">
-                        <option value="limapuluh">50.000</option>
-                        <option value="empatpuluh">40.000</option>
-                        <option value="tigalima">35.000</option>
+                        <option >50000</option>
+                        <option >40000</option>
+                        <option >35000</option>
                       </select>
                     </div>
 

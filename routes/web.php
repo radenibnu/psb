@@ -23,7 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
 Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP');
-Route::get('/', 'pembayaranSPPController@store')->name('pembayaranSPP.store');
+Route::post('/', 'pembayaranSPPController@store')->name('pembayaranSPP.store');
+Route::get('/notifikasi', 'pembayaranSPPController@notifikasi')->name('pembayaranSPP.notifikasi');
 
 Route::prefix('admin')->group(function () {
 

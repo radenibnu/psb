@@ -43,13 +43,13 @@ class pembayaranSPPController extends Controller
         $spps = $request->all();
 
         if($request->kategoribayar == 50000){
-            $request->keterangan = "Lunas";
+            $spps["keterangan"] = "Lunas";
         }elseif($request->kategoribayar == 40000){
-            $request->keterangan = "Lunas";
+            $spps["keterangan"] = "Lunas";
         }elseif($request->kategoribayar == 35000){
-            $request->keterangan = "Lunas";
+            $spps["keterangan"] = "Lunas";
         }else {
-            $request->keterangan = "Belum Lunas";
+            $spps["keterangan"] = "Belum Lunas";
         }
 
         // dd($spps);

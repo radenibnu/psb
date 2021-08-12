@@ -22,6 +22,6 @@ class PembayaranSPP extends Model
     public function getCreatedAtAttribute()
     {
         return Carbon::parse($this->attributes['created_at'])
-                ->translatedFormat('l, d F Y');
+                ->translatedFormat('l, d F Y, h:mm');
     }
 }

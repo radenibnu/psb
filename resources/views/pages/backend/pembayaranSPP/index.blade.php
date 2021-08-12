@@ -34,7 +34,7 @@
                         <tr>
                             <td>  {{ $loop->iteration}}</td>
                             <td> {{$spp->nama}}</td>
-                            <td> {{$spp->keterangan}}</td>
+                            <td><span class="badge badge-success"> {{$spp->keterangan}} </span></td>
                             <td>
                                 <form action="{{ route('pembayaranSPPController.destroy', $spp->id) }}" method="POST">
                                     <a href="{{ route('pembayaranSPPController.show', $spp->id) }}" type="" class=""><input type="button" class="btn btn-success btn-sm" value="View"></a>

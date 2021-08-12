@@ -20,6 +20,7 @@ class CreatePembayaranSPPSTable extends Migration
             $table->string('kelas')->nullable();
             $table->integer('kategoribayar')->nullable();
             $table->string('bulan')->nullable();
+            $table->string('keterangan')->nullable();
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

@@ -14,6 +14,7 @@ class PembayaranSPP extends Model
         'nis',
         'kelas',
         'kategoribayar',
-        'bulan'
+        'bulan',
+        'keterangan'
     ];
 }

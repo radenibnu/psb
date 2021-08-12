@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
-Route::get('/pembayaranSPP', 'pembayaranSPPController@index')->name('pembayaranSPP');
+Route::get('/pembayaranSPP', 'pembayaranSPPController@create')->name('pembayaranSPP');
 Route::post('/pembayaranSPPStore', 'pembayaranSPPController@store')->name('pembayaranSPPStore');
 Route::get('/notifikasi', 'pembayaranSPPController@notifikasi')->name('pembayaranSPP.notifikasi');
 
@@ -35,6 +35,17 @@ Route::get('/notifikasiUpload', 'formController@notifikasiUpload')->name('notifi
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'dashboardController@index')->name('dashboard.index');
+
+    Route::prefix('pembayaranSPP')->group(function () {
+        Route::get('/', 'pembayaranSPPController@index')->name('pembayaranSPPController.index');
+        // Route::get('/create', 'pembayaranSPPController@create')->name('pembayaranSPPController.create');
+        // Route::post('/', 'pembayaranSPPController@store')->name('pembayaranSPPController.store');
+        Route::get('/edit/{id}', 'pembayaranSPPController@edit')->name('pembayaranSPPController.edit');
+        Route::put('/{id}', 'pembayaranSPPController@update')->name('pembayaranSPPController.update');
+        Route::put('/delete', 'pembayaranSPPController@delete')->name('pembayaranSPPController.delete');
+        Route::delete('/{id}', 'pembayaranSPPController@destroy')->name('pembayaranSPPController.destroy');
+        Route::get('/show/{id}', 'pembayaranSPPController@show')->name('pembayaranSPPController.show');
+    });
 
     Route::prefix('form')->group(function () {
         Route::get('/', 'formController@index')->name('form.index');

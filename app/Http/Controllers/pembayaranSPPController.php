@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PembayaranSPP;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\If_;
 
 class pembayaranSPPController extends Controller
 {
@@ -14,7 +15,11 @@ class pembayaranSPPController extends Controller
      */
     public function index()
     {
-        return view('pages.frontend.pembayaranSPP');
+        $spps = PembayaranSPP::all();
+
+        return view('pages.backend.pembayaranSPP.index')->with([
+            'spps' => $spps
+        ]);
     }
 
     /**
@@ -24,7 +29,7 @@ class pembayaranSPPController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.frontend.pembayaranSPP');
     }
 
     /**
@@ -36,6 +41,18 @@ class pembayaranSPPController extends Controller
     public function store(Request $request)
     {
         $spps = $request->all();
+
+        if($request->kategoribayar == 50000){
+            $request->keterangan = "Lunas";
+        }elseif($request->kategoribayar == 40000){
+            $request->keterangan = "Lunas";
+        }elseif($request->kategoribayar == 35000){
+            $request->keterangan = "Lunas";
+        }else {
+            $request->keterangan = "Belum Lunas";
+        }
+
+        // dd($spps);
 
         PembayaranSPP::create($spps);
         return redirect()->route('pembayaranSPP.notifikasi');   
@@ -58,7 +75,11 @@ class pembayaranSPPController extends Controller
      */
     public function show($id)
     {
-        //
+        $spp = PembayaranSPP::findOrFail($id);
+
+        return view('pages.backend.pembayaranSPP.show')->with([
+            'spp' => $spp
+        ]);
     }
 
     /**
@@ -69,7 +90,11 @@ class pembayaranSPPController extends Controller
      */
     public function edit($id)
     {
-        //
+        $spp = PembayaranSPP::findOrFail($id);
+
+        return view('pages.backend.pembayaranSPP.edit')->with([
+            'spp' => $spp
+        ]);
     }
 
     /**
@@ -81,7 +106,12 @@ class pembayaranSPPController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $newspp = $request->all();
+
+        $spp = PembayaranSPP::findOrFail($id);
+        $spp->update($newspp);
+
+        return redirect()->route('pembayaranSPPController.index');
     }
 
     /**
@@ -92,6 +122,8 @@ class pembayaranSPPController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $spp = PembayaranSPP::findOrFail($id);
+        $spp->delete();
+        return redirect()->route('pembayaranSPPController.index');
     }
 }

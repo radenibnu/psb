@@ -29,11 +29,18 @@
         Interface
     </div>
 
-     <!-- Nav Item - Agent-->
-     <li class="nav-item active">
+     <!-- Nav Item - List Pembayaran SPP-->
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('pembayaranSPPController.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>List Data Pembayaran SPP</span></a>
+    </li>
+
+     <!-- Nav Item - List Data Upload Pembayaran-->
+    <li class="nav-item active">
         <a class="nav-link" href="{{ route('form.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
-            <span>Form SPP</span></a>
+            <span>List Data Upload Pembayaran</span></a>
     </li>
 
     <!-- Divider -->

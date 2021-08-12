@@ -2,19 +2,19 @@
 
 @section('content')    
 
-    <h1 class="h3 mb-2 text-gray-800">Form SPP</h1>
+    <h1 class="h3 mb-2 text-gray-800">List Data Bukti Upload pembayaran</h1>
 
      <!-- DataTales Example -->
      <div class="card shadow mb-4">
          <div class="card-header py-3">
-            <a href="{{ route('form.create') }}" class="btn btn-primary btn-icon-split">
+            {{-- <a href="{{ route('form.create') }}" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
                 <span class="text">Add Data SPP</span>
-            </a>
+            </a> --}}
             <a href="{{ route('form.cetak') }}" class="btn btn-primary btn-icon-split">
-                <span class="text">export PDF</span>
+                <span class="text">Export to PDF</span>
             </a>
          </div>
          <div class="card-body">
@@ -24,16 +24,16 @@
                          <tr>
                              <th>No</th>
                              <th>Nama Siswa</th>
-                             <th>Kelas</th>
+                             <th>Tanggal Upload</th>
                              <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
                         @forelse ($forms as $form)
                         <tr>
-                            <td>  {{ $loop->iteration}}</td>
+                            <td> {{ $loop->iteration}}</td>
                             <td> {{$form->nama}}</td>
-                            <td> {{$form->kelas}}</td>
+                            <td> {{$form->created_at}}</td>
                             <td>
                                 <form action="{{ route('form.destroy', $form->id) }}" method="POST">
                                     <a href="{{ route('form.show', $form->id) }}" type="" class=""><input type="button" class="btn btn-success btn-sm" value="View"></a>

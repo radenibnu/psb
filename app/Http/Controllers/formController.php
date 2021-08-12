@@ -71,15 +71,24 @@ class formController extends Controller
         ]);
     }
 
+  
+
     public function cetakPDF()
     {
-        $forms = Form::all();
+        $data = Form::all();
 
-        view()->share('data', $forms);
-        $pdf = PDF::loadview('pages.backend.form.cetak_pdf', [
-            'form' => $forms
-        ]);
-        return $pdf->download('form.pdf');
+        view()->share('data', $data);
+        $pdf = PDF::loadview('pages.backend.form.cetak_pdf');
+        return $pdf->download('data-upload.pdf');
+
+        // $forms = Form::all();
+
+        // view()->share('data', $forms);
+        // $pdf = PDF::loadview('pages.backend.form.cetak_pdf', [
+        //     'form' => $forms
+        // ]);
+        // return $pdf->download('form.pdf');
+
     }
 
     /**

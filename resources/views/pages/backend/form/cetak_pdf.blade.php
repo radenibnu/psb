@@ -1,35 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h5>Detail Forms</h5>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Siswa</th>
-                        <th>Kelas</th>
-                        <th>Nama Rekening</th>
-                        <th>Nomor Rekening</th>
-                        <th>Image</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @forelse ($forms as $form )
-                        <tr>
-                            <td> {{ $form->id}}</td>
-                            <td> {{$form->nama}}</td>
-                            <td> {{$form->kelas}}</td>
-                            <td> {{ $form->nama_rekening }}</td>
-                            <td> {{$form->nomor_rekening}}</td> --}}
-                            {{-- <td> <img src="{{ asset($form->image) }}" alt="" width="50"></td> --}}       
-                        </tr>
-                    {{-- @empty
-                    @endforelse --}}
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<table id="customers">
+    <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+        <th>Nama Rekening</th>
+        <th>Nomor Rekening</th>
+        <th>Image</th>
+        <th>Tanggal Upload</th>
+    </tr>
+    @foreach ($data as $row )
+    <tr>
+        <td>{{ $loop->iteration }}</td>
+        <td>{{ $row->nama }}</td>
+        <td>{{ $row->kelas }}</td>
+        <td>{{ $row->nama_rekening }}</td>
+        <td>{{ $row->nomor_rekening }}</td>
+        <td><img src="{{ asset($row->image) }}" alt=""></td>
+        <td>{{ $row->created_at }}</td>
+    </tr>   
+    @endforeach
+</table>
+
+</body>
+</html>

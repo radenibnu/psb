@@ -13,57 +13,55 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'frontendCOntroller@index')->name('frontend');
 
-Route::get('/pembayaranSPP', 'pembayaranSPPController@create')->name('pembayaranSPP');
-Route::post('/pembayaranSPPStore', 'pembayaranSPPController@store')->name('pembayaranSPPStore');
-Route::get('/notifikasi', 'pembayaranSPPController@notifikasi')->name('pembayaranSPP.notifikasi');
+Route::get('/pendaftaransiswa', 'datasiswaController@create')->name('datasiswa');
+Route::post('/datasiswaStore', 'datasiswaController@store')->name('datasiswa.store');
 
-Route::get('/uploadBuktiTransfer', 'formController@create')->name('form.create');
-Route::post('/uploadStore', 'formController@store')->name('form.store');
-Route::get('/notifikasiUpload', 'formController@notifikasiUpload')->name('notifikasiUpload');
-
-
+Route::get('/uploadberkas', 'databerkasController@create')->name('databerkas.create');
+Route::post('/uploadstore', 'databerkasController@store')->name('databerkas.store');
 
 Route::prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'dashboardController@index')->name('dashboard.index');
 
-    Route::prefix('pembayaranSPP')->group(function () {
-        Route::get('/', 'pembayaranSPPController@index')->name('pembayaranSPPController.index');
-        // Route::get('/create', 'pembayaranSPPController@create')->name('pembayaranSPPController.create');
-        // Route::post('/', 'pembayaranSPPController@store')->name('pembayaranSPPController.store');
-        Route::get('/edit/{id}', 'pembayaranSPPController@edit')->name('pembayaranSPPController.edit');
-        Route::put('/{id}', 'pembayaranSPPController@update')->name('pembayaranSPPController.update');
-        Route::put('/delete', 'pembayaranSPPController@delete')->name('pembayaranSPPController.delete');
-        Route::delete('/{id}', 'pembayaranSPPController@destroy')->name('pembayaranSPPController.destroy');
-        Route::get('/show/{id}', 'pembayaranSPPController@show')->name('pembayaranSPPController.show');
+    Route::prefix('datasiswa')->group(function () {
+        Route::get('/', 'datasiswaController@index')->name('datasiswa.index');
+        Route::get('cari', 'datasiswaController@cari')->name('datasiswa.cari');
+        // Route::get('/create', 'datasiswaController@create')->name('datasiswa.create');
+        // Route::post('/', 'datasiswaController@store')->name('datasiswa.store');
+        Route::get('/edit/{id}', 'datasiswaController@edit')->name('datasiswa.edit');
+        Route::put('/{id}', 'datasiswaController@update')->name('datasiswa.update');
+        Route::put('/delete', 'datasiswaController@delete')->name('datasiswa.delete');
+        Route::delete('/{id}', 'datasiswaController@destroy')->name('datasiswa.destroy');
+        Route::get('/show/{id}', 'datasiswaController@show')->name('datasiswa.show');
+
+        Route::get('/cetak_pdf', 'datasiswaController@cetak_pdf')->name('datasiswa.cetak');
+        Route::get('/export_excel', 'datasiswaController@export_excel')->name('export_excel');
     });
 
-    Route::prefix('form')->group(function () {
-        Route::get('/', 'formController@index')->name('form.index');
-        // Route::get('/create', 'formController@create')->name('form.create');
-        // Route::post('/', 'formController@store')->name('form.store');
-        Route::get('/edit/{id}', 'formController@edit')->name('form.edit');
-        Route::put('/{id}', 'formController@update')->name('form.update');
-        Route::put('/delete', 'formController@delete')->name('form.delete');
-        Route::delete('/{id}', 'formController@destroy')->name('form.destroy');
-        Route::get('/show/{id}', 'formController@show')->name('form.show');
-
-        // Route::get('/cetak_pdf/{id}', 'formController@cetakPDF')->name('form.cetak');
-        Route::get('/cetak_pdf', 'formController@cetakPDF')->name('form.cetak');
+    Route::prefix('databerkas')->group(function () {
+        Route::get('/', 'databerkasController@index')->name('databerkas.index');
+        // Route::get('/create', 'databerkasController@create')->name('databerkas.create');
+        // Route::post('/', 'databerkasController@store')->name('databerkas.store');
+        Route::get('/edit/{id}', 'databerkasController@edit')->name('databerkas.edit');
+        Route::put('/{id}', 'databerkasController@update')->name('databerkas.update');
+        Route::put('/delete', 'databerkasController@delete')->name('databerkas.delete');
+        Route::delete('/{id}', 'databerkasController@destroy')->name('databerkas.destroy');
+        Route::get('/show/{id}', 'databerkasController@show')->name('databerkas.show');
     });
 
     Route::prefix('manageAccount')->group(function () {
         Route::get('/', 'manageAccountController@index')->name('manageAccount.index');
-        Route::get('/create', 'manageAccountController@create')->name('manageAccount.create');
+        Route::get('/add_create', 'manageAccountController@add_create')->name('manageAccount.add_create');
+        // Route::post('/', 'manageAccountController@create')->name('manageAccount.create');
         Route::post('/', 'manageAccountController@store')->name('manageAccount.store');
         // Route::get('/edit/{id}', 'manageAccountController@edit')->name('manageAccount.edit');
         // Route::put('/{id}', 'manageAccountController@update')->name('manageAccount.update');
@@ -76,6 +74,4 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'profileController@index')->name('profile.index');
         Route::put('/{id}', 'profileController@update')->name('profile.update');
     });
-
-    
 });

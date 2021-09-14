@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class manageAccountController extends Controller
 {
@@ -25,7 +27,7 @@ class manageAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add_create()
     {
         return view('pages.backend.manageaccount.create');
         
@@ -39,11 +41,20 @@ class manageAccountController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'password' => ['required', 'string', 'min: 8', 'confirmed'] 
+        ]);
+
         $users = $request->all();
+        if (!empty($request->password)) {
+            $users['password'] = Hash::make($request->password);
+        }
+
         User::create($users);
 
         return redirect()->route('manageAccount.index');
     }
+
 
     /**
      * Display the specified resource.

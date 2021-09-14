@@ -43,7 +43,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" class="form-control @error('password')
+                    <input type="password" class="form-control @error('password')
                         is-invalid
                     @enderror" name="password" id="password">
                     </div>
@@ -57,7 +57,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                     <label for="password_confirmation">Repeat Password</label>
-                    <input type="text" class="form-control" name="password_confirmation" id="password_confirmation">
+                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
                     </div>
                 </div>
             </div>

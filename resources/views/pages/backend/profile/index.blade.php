@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{asset($user->image)}}" alt="Card image cap">
+                {{-- <img class="card-img-top" src="{{asset($user->image)}}" alt="Card image cap"> --}}
                 <div class="card-body">
                     <h5 class="card-title">Username : {{$user->name}}</h5>
                     <p class="card-text">Email : {{$user->email}}</p>
@@ -47,16 +47,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="image" class="col-md-2 col-form-label text-md-right">{{ __('Image') }}</label>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="file" name="image" class="form-control-file" id="image">
-                                </div>
                             </div>
                         </div>
 

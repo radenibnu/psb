@@ -2,24 +2,22 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TPQ</title>
+    <title>MI An Najiyah</title>
 
     @stack('before-css')
     @include('includes.backend.style')
     @stack('after-css')
-    @toastr_css
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -35,8 +33,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    {{-- @include('pages.backend.datasiswa.flash-message') --}}
 
-                   @yield('content')
+                    @yield('content')
 
                 </div>
                 <!-- /.container-fluid -->
@@ -78,10 +77,25 @@
     </div>
 
     @include('includes.backend.script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        @if(Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if(Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+
+        @if(Session::has('warning'))
+            toastr.info("{{ Session::get('warning') }}");
+        @endif
+
+        @if(Session::has('danger'))
+            toastr.info("{{ Session::get('danger') }}");
+        @endif
+    </script>
 
 </body>
-@jquery
-@toastr_js
-@toastr_render
 
 </html>

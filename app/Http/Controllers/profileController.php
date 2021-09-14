@@ -94,8 +94,6 @@ class profileController extends Controller
 
         $user->update();
 
-
-
         // alert()->success('User Sukses diupdate', 'Success');
         return redirect()->route('profile.index');
     }

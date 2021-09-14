@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>Form Pembayaran SPP</title>
+    <title>Form Pendaftaran</title>
   </head>
   <body>
 
@@ -16,13 +16,13 @@
         <div class="card text-center">
             <div class="card-header">
                 <div class="alert alert-primary">
-                    Pembayaran Sukses !!!
+                    Pengisian Form Pendaftaran berhasil!!!
                 </div>
             </div>
             <div class="card-body">
                 {{-- @foreach ($spps as $spp) --}}
                     
-                <p class="card-text">Selanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank Syariah Indonesia : 97978796876</strong> atas nama <strong> TPQ </strong>. <br> Kemudian upload bukti transfer <a href="{{ route('form.create') }}"> disini </a> 
+                <p class="card-text">Selanjutnya silahkan upload berkas <a href="{{ route('databerkas.create') }}"> disini </a> 
                     {{-- Rp. {{ number_format($spp->kategoribayar) }} --}}
                 </p>
                 {{-- @endforeach --}}

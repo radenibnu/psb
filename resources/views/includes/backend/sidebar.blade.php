@@ -5,10 +5,9 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard.index') }}">
         <div class="sidebar-brand-icon">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img src="{{ asset('src/logo/logo.png') }}" alt="" width="100px">
-            <h5>TPQ Untitle</h5>
+            {{-- <img src="{{ asset('src/logo/logo.png') }}" alt="" width="100px"> --}}
         </div>
-        {{-- <div class="sidebar-brand-text mx-3">Hayyu Shopping</div> --}}
+        <div class="sidebar-brand-text mx-3">MI An Najiyah</div>
     </a>
 
     <!-- Divider -->
@@ -20,31 +19,19 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('datasiswa.index') }}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Data Siswa</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('databerkas.index') }}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Data Berkas</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
-
-     <!-- Nav Item - List Pembayaran SPP-->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ route('pembayaranSPPController.index')}}">
-            <i class="fab fa-fw fa-wpforms"></i>
-            <span>List Data Pembayaran SPP</span></a>
-    </li>
-
-     <!-- Nav Item - List Data Upload Pembayaran-->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ route('form.index')}}">
-            <i class="fab fa-fw fa-wpforms"></i>
-            <span>List Data Upload Pembayaran</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
 
      <!-- Heading -->
      <div class="sidebar-heading">
@@ -62,7 +49,6 @@
             <i class="fas fa-fw fa-user"></i>
             <span>Manage Account</span></a>
     </li>
-
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
